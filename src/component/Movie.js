@@ -1,29 +1,30 @@
 import React from "react";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
 const Movie = (props) => {
   console.log(props.movie);
   return (
-    <div className="container">
-      <div className="row">
+    <Container>
+      <Row className="row">
         {props.movie.map((m) => (
-          <div className="col-sm" key={m.id}>
-            <div className="card" style={{ width: "18rem" }}>
-              <img src={m.img} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">{m.name}</h5>
-                <p className="card-text">{m.price}</p>
-                <button
-                  className="btn btn-primary"
+          <Col sm key={m.id}>
+            <Card style={{ width: "18rem" }}>
+              <Card.Img src={m.img} variant="top" />
+              <Card.Body>
+                <Card.Title>{m.name}</Card.Title>
+                <Card.Text>{m.price}</Card.Text>
+                <Button
+                  variant="primary"
                   onClick={() => props.pushToBasket(m.price)}
                 >
                   Put to Basket
-                </button>
-              </div>
-            </div>
-          </div>
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
         ))}
-      </div>
-    </div>
+      </Row>
+    </Container>
   );
 };
 

@@ -4,7 +4,7 @@ import { Navbar, Badge, Form, FormControl, Button } from "react-bootstrap";
 const Nav = (props) => {
   return (
     <Navbar>
-      <Navbar.Brand>Navbar</Navbar.Brand>
+      <Navbar.Brand>Welcome</Navbar.Brand>
       <Form inline>
         <FormControl
           className="mr-sm-2"
