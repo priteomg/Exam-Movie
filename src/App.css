@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+nav {
+  background-color: #fadcac;
+}
+
+#search-button {
+  border-color: #065446;
+}
+
+.card {
+  margin-top: 30px;
+}
