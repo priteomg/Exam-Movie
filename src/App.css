@@ -41,7 +41,12 @@ nav {
   background-color: #fadcac;
 }
 
+.navbar-expand {
+  justify-content: space-between;
+}
+
 #search-button {
+  color: #065446;
   border-color: #065446;
 }
 

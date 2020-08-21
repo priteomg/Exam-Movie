@@ -1,30 +1,25 @@
 import React from "react";
+import { Navbar, Badge, Form, FormControl, Button } from "react-bootstrap";
 
-const Navbar = (props) => {
+const Nav = (props) => {
   return (
-    <nav className="navbar navbar-light">
-      <span className="navbar-brand mb-0 h1">Navbar</span>
-      <form className="form-inline my-2 my-lg-0">
-        <input
-          className="form-control mr-sm-2"
-          type="search"
+    <Navbar>
+      <Navbar.Brand>Navbar</Navbar.Brand>
+      <Form inline>
+        <FormControl
+          className="mr-sm-2"
+          type="text"
           placeholder="Search Movie"
-          aria-label="Search"
         />
-        <button
-          id="search-button"
-          className="btn btn-outline my-2 my-sm-0"
-          type="submit"
-        >
+        <Button variant="outline" id="search-button" type="submit">
           Search
-        </button>
-      </form>
-      <button type="button" className="btn btn-primary">
-        Basket{" "}
-        <span className="badge badge-light">{props.basket.movieCount}</span>
-      </button>
-    </nav>
+        </Button>
+      </Form>
+      <Button variant="primary">
+        Basket <Badge variant="light">{props.basket.movieCount}</Badge>
+      </Button>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default Nav;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import Navbar from "./component/Navbar";
+import Nav from "./component/Navbar";
 import Movie from "./component/Movie";
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
 
   return (
     <div>
-      <Navbar basket={basket} />
+      <Nav basket={basket} />
       <Movie movie={movies} pushToBasket={pushToBasket} />
     </div>
   );
