@@ -5,17 +5,25 @@ import Movie from "./component/Movie";
 import axios from "axios";
 
 function App() {
+  const [search, setSearch] = useState("");
+  const [movies, SetMovies] = useState([]);
+  const [price, setPrice] = useState(0);
+  const [basket, setBasket] = useState([]);
+
+  const [show, setShow] = useState(false);
   useEffect(() => {
     fetchMovie();
 
-    // if (localStorage.getItem("myCart")) {
-    //   setLists(JSON.parse(localStorage.getItem("myCart")));
-    // }
+    if (localStorage.getItem("myCart") && localStorage.getItem("totalPrice")) {
+      setBasket(JSON.parse(localStorage.getItem("myCart")));
+      setPrice(JSON.parse(localStorage.getItem("totalPrice")));
+    }
   }, []);
 
-  // useEffect(() => {
-  //   localStorage.setItem("myCart", JSON.stringify(basket));
-  // }, [basket]);
+  useEffect(() => {
+    localStorage.setItem("myCart", JSON.stringify(basket));
+    localStorage.setItem("totalPrice", JSON.stringify(price));
+  }, [basket, price]);
 
   async function fetchMovie() {
     try {
@@ -29,13 +37,6 @@ function App() {
       console.log(error);
     }
   }
-
-  const [search, setSearch] = useState("");
-  const [movies, SetMovies] = useState([]);
-  const [price, setPrice] = useState(0);
-  const [basket, setBasket] = useState([]);
-
-  const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
