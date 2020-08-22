@@ -2,8 +2,6 @@ import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
 const Movie = (props) => {
-  console.log(props.movie);
-
   return (
     <Container>
       <Row className="row">
@@ -16,10 +14,12 @@ const Movie = (props) => {
               />
               <Card.Body>
                 <Card.Title>{m.title}</Card.Title>
-                <Card.Text>{m.popularity}</Card.Text>
+                <Card.Text>{Math.ceil(m.popularity) * 10} ฿</Card.Text>
                 <Button
                   variant="primary"
-                  onClick={() => props.pushToBasket(m.popularity)}
+                  onClick={() =>
+                    props.pushToBasket(m.popularity, m.title, m.id)
+                  }
                 >
                   Put to Basket
                 </Button>

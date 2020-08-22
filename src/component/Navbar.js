@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Navbar,
   Badge,
@@ -24,23 +24,28 @@ const Nav = (props) => {
         </Button>
       </Form>
       <Button variant="primary" onClick={props.handleShow}>
-        Cart <Badge variant="light">{props.basket.movieCount}</Badge>
+        Cart <Badge variant="light">{props.basket.length}</Badge>
       </Button>
 
       <Modal show={props.show} onHide={props.handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Your Shopping Cart</Modal.Title>
+          <Modal.Title>
+            Your Shopping Cart
+            <div>
+              Number of Movie: {props.basket.length}
+              <div>Total Price: {props.price}</div>
+            </div>
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <ListGroup>
-            <ListGroup.Item>
-              Number of Movie: {props.basket.movieCount}
-            </ListGroup.Item>
-            <ListGroup.Item>
-              Total Price:
-              {props.basket.price}
-            </ListGroup.Item>
-          </ListGroup>{" "}
+          {props.basket.map((c, index) => (
+            <ListGroup key={index}>
+              <ListGroup.Item>
+                {c.title}
+                <div style={{ float: "right" }}>{c.price} ฿</div>{" "}
+              </ListGroup.Item>
+            </ListGroup>
+          ))}{" "}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={props.handleClose}>

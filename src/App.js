@@ -7,7 +7,15 @@ import axios from "axios";
 function App() {
   useEffect(() => {
     fetchMovie();
+
+    // if (localStorage.getItem("myCart")) {
+    //   setLists(JSON.parse(localStorage.getItem("myCart")));
+    // }
   }, []);
+
+  // useEffect(() => {
+  //   localStorage.setItem("myCart", JSON.stringify(basket));
+  // }, [basket]);
 
   async function fetchMovie() {
     try {
@@ -22,27 +30,26 @@ function App() {
     }
   }
 
-  //ทำ modal รวมราคา รวมของทั้งหม
-  //ดึง data จริงจาก api (async await)
   const [search, setSearch] = useState("");
   const [movies, SetMovies] = useState([]);
-  const [basket, setBasket] = useState({ price: 0, movieCount: 0 });
+  const [price, setPrice] = useState(0);
+  const [basket, setBasket] = useState([]);
 
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const pushToBasket = (price) => {
-    setBasket({
-      price: basket.price + price,
-      movieCount: basket.movieCount + 1,
-    });
+  const pushToBasket = (cost, title, id) => {
+    const newCost = Math.ceil(cost) * 10;
+    setBasket([...basket, { id: id, title: title, price: newCost }]);
+    setPrice(Math.ceil(price) + newCost);
   };
 
   return (
     <div>
       <Nav
+        price={price}
         basket={basket}
         show={show}
         handleShow={handleShow}
