@@ -10,6 +10,12 @@ function App() {
   const [price, setPrice] = useState(0);
   const [basket, setBasket] = useState([]);
   const [show, setShow] = useState(false);
+  const [purchase, setPurchase] = useState(false);
+  const [timeLeft, setTimeLeft] = useState({
+    minutes: null,
+    seconds: null,
+  });
+  const [over, setOver] = useState(false);
 
   useEffect(() => {
     fetchMovie();
@@ -38,8 +44,13 @@ function App() {
     }
   }
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => {
+    setShow(false);
+    setPurchase(false);
+  };
+  const handleShow = () => {
+    setShow(true);
+  };
 
   const pushToBasket = (cost, title, id) => {
     const newCost = Math.ceil(cost) * 10;
@@ -52,17 +63,26 @@ function App() {
     setPrice(0);
   };
 
+  const purchasePopup = () => {
+    setPurchase(true);
+    setTimeLeft({ minutes: 1, seconds: 0 });
+  };
+
   return (
     <div>
       <Nav
-        // search={search}
-        // setSearch={setSearch}
+        over={over}
+        timeLeft={timeLeft}
+        purchase={purchase}
         price={price}
         basket={basket}
         show={show}
+        setOver={setOver}
+        setTimeLeft={setTimeLeft}
         clearCart={clearCart}
         handleShow={handleShow}
         handleClose={handleClose}
+        purchasePopup={purchasePopup}
       />
       <Movie movie={movies} pushToBasket={pushToBasket} />
     </div>

@@ -46,8 +46,12 @@ form {
 }
 
 #search {
-  width: 87%;
+  width: 94%;
 }
+
+/* #price {
+  width: 22%;
+} */
 
 .navbar-expand {
   justify-content: space-between;
@@ -62,7 +66,42 @@ form {
   margin-top: 30px;
 }
 
+#cardImg {
+}
+
+.timer {
+  text-align: center;
+}
+
 #notfound {
   margin: auto;
   margin-top: 20px;
+}
+
+.payment {
+  display: flex;
+}
+
+#scbImg,
+#kankImg {
+  width: 200px;
+  height: 175px;
+  vertical-align: text-top;
+
+  margin-top: -20px;
+}
+
+.kbank {
+  margin-left: auto;
+  margin-top: -6px;
+}
+
+#credit {
+  margin-top: -60px;
+  text-align: center;
+}
+
+.numberPrice {
+  margin-right: auto;
+  width: -webkit-fill-available;
 }

@@ -44,9 +44,10 @@ const Movie = (props) => {
         </Col>
         {filteredMovies.length > 0 ? (
           filteredMovies.map((m) => (
-            <Col sm key={m.id}>
-              <Card style={{ width: "18rem" }}>
+            <Col xl={3} sm={6} lg={4} key={m.id}>
+              <Card>
                 <Card.Img
+                  id="cardImg"
                   src={"https://image.tmdb.org/t/p/w500/" + m.poster_path}
                   variant="top"
                 />
