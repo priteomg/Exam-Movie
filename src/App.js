@@ -47,12 +47,18 @@ function App() {
     setPrice(Math.ceil(price) + newCost);
   };
 
+  const clearCart = () => {
+    setBasket([]);
+    setPrice(0);
+  };
+
   return (
     <div>
       <Nav
         price={price}
         basket={basket}
         show={show}
+        clearCart={clearCart}
         handleShow={handleShow}
         handleClose={handleClose}
       />

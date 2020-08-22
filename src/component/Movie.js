@@ -21,7 +21,7 @@ const Movie = (props) => {
                     props.pushToBasket(m.popularity, m.title, m.id)
                   }
                 >
-                  Put to Basket
+                  Put to Cart
                 </Button>
               </Card.Body>
             </Card>

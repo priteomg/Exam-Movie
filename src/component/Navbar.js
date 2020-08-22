@@ -10,6 +10,15 @@ import {
 } from "react-bootstrap";
 
 const Nav = (props) => {
+  const sales = (price) => {
+    let salesPrice = 0;
+    if (props.basket.length > 5) {
+      return (salesPrice = price - price / 5);
+    } else if (props.basket.length > 3) {
+      return (salesPrice = price - price / 10);
+    } else return price;
+  };
+
   return (
     <Navbar>
       <Navbar.Brand>Welcome</Navbar.Brand>
@@ -33,9 +42,16 @@ const Nav = (props) => {
             Your Shopping Cart
             <div>
               Number of Movie: {props.basket.length}
-              <div>Total Price: {props.price}</div>
+              <div>Total Price: {sales(props.price)}</div>
             </div>
           </Modal.Title>
+          <Button
+            variant="danger"
+            style={{ float: "right" }}
+            onClick={props.clearCart}
+          >
+            Clear
+          </Button>
         </Modal.Header>
         <Modal.Body>
           {props.basket.map((c, index) => (
