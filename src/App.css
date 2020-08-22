@@ -41,6 +41,14 @@ nav {
   background-color: #fadcac;
 }
 
+form {
+  margin-top: 20px;
+}
+
+#search {
+  width: 87%;
+}
+
 .navbar-expand {
   justify-content: space-between;
 }
@@ -52,4 +60,9 @@ nav {
 
 .card {
   margin-top: 30px;
+}
+
+#notfound {
+  margin: auto;
+  margin-top: 20px;
 }

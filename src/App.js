@@ -5,12 +5,12 @@ import Movie from "./component/Movie";
 import axios from "axios";
 
 function App() {
-  const [search, setSearch] = useState("");
-  const [movies, SetMovies] = useState([]);
+  // const [search, setSearch] = useState("");
+  const [movies, setMovies] = useState([]);
   const [price, setPrice] = useState(0);
   const [basket, setBasket] = useState([]);
-
   const [show, setShow] = useState(false);
+
   useEffect(() => {
     fetchMovie();
 
@@ -32,7 +32,7 @@ function App() {
       );
       const { results } = res.data;
       console.log(results);
-      SetMovies(results);
+      setMovies(results);
     } catch (error) {
       console.log(error);
     }
@@ -55,6 +55,8 @@ function App() {
   return (
     <div>
       <Nav
+        // search={search}
+        // setSearch={setSearch}
         price={price}
         basket={basket}
         show={show}
