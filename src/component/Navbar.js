@@ -19,15 +19,6 @@ const Nav = (props) => {
   };
 
   useEffect(() => {
-    // if (props.timeLeft === 0) {
-    //   props.setTimeLeft(null);
-    // }
-
-    // if (!props.timeLeft) return;
-
-    // const interValid = setInterval(() => {
-    //   props.setTimeLeft(props.timeLeft - 1);
-    // }, 1000);
     let interValid = setInterval(() => tick(), 1000);
 
     return () => clearInterval(interValid);
@@ -49,9 +40,9 @@ const Nav = (props) => {
   return (
     <Navbar>
       <Navbar.Brand>Welcome</Navbar.Brand>
-      <Button variant="primary" onClick={props.handleShow}>
+      {/* <Button variant="primary" onClick={props.handleShow}>
         Cart <Badge variant="light">{props.basket.length}</Badge>
-      </Button>
+      </Button> */}
 
       <Modal
         show={props.show}

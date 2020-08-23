@@ -3,6 +3,7 @@ import "./App.css";
 import Nav from "./component/Navbar";
 import Movie from "./component/Movie";
 import axios from "axios";
+import { Button, Badge } from "react-bootstrap";
 
 function App() {
   // const [search, setSearch] = useState("");
@@ -85,6 +86,14 @@ function App() {
         purchasePopup={purchasePopup}
       />
       <Movie movie={movies} pushToBasket={pushToBasket} />
+      <Button id="btnCart" onClick={handleShow}>
+        <i id="cartIcon" className="material-icons md-48">
+          shopping_cart
+        </i>
+        <Badge id="badgeClass" variant="light">
+          {basket.length}
+        </Badge>
+      </Button>
     </div>
   );
 }

@@ -7,6 +7,8 @@ import {
   Button,
   Form,
   FormControl,
+  CardGroup,
+  CardDeck,
 } from "react-bootstrap";
 
 const Movie = (props) => {
@@ -44,10 +46,12 @@ const Movie = (props) => {
         </Col>
         {filteredMovies.length > 0 ? (
           filteredMovies.map((m) => (
-            <Col xl={3} sm={6} lg={4} key={m.id}>
+            <Col xl={3} xs={12} sm={6} lg={4} key={m.id}>
               <Card>
                 <Card.Img
                   id="cardImg"
+                  height="379.5"
+                  width="253"
                   src={"https://image.tmdb.org/t/p/w500/" + m.poster_path}
                   variant="top"
                 />

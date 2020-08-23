@@ -37,6 +37,44 @@
   }
 }
 
+@media (min-width: 576px) {
+  Col {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  Col {
+    width: 100%;
+  }
+}
+
+#btnCart {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 100px;
+  height: 75px;
+  /* border-radius: 50%; */
+  background-color: #065446;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#cartIcon {
+  font-size: 48px;
+}
+
+#badgeClass {
+  left: 2px;
+  top: -20px;
+}
+
 nav {
   background-color: #fadcac;
 }
@@ -66,8 +104,10 @@ form {
   margin-top: 30px;
 }
 
-#cardImg {
-}
+/* #cardImg {
+  max-width: 100%;
+  height: auto;
+} */
 
 .timer {
   text-align: center;
