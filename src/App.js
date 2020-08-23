@@ -49,6 +49,7 @@ function App() {
   const handleClose = () => {
     setShow(false);
     setPurchase(false);
+    setOver(false);
   };
   const handleShow = () => {
     setShow(true);

@@ -64,9 +64,10 @@ const Movie = (props) => {
                 />
                 <Card.Body>
                   <Card.Title>{m.title}</Card.Title>
-                  <Card.Text>{Math.ceil(m.popularity) * 10} ฿</Card.Text>
+                  <Card.Text>Rating: {m.vote_average}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
+                  <Card.Text>{Math.ceil(m.popularity) * 10} ฿</Card.Text>
                   <Button
                     variant="primary"
                     onClick={() =>
