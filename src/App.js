@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Nav from "./component/Navbar";
+import Cart from "./component/Cart";
 import Movie from "./component/Movie";
+
 import axios from "axios";
 import { Button, Badge } from "react-bootstrap";
 
@@ -70,8 +71,8 @@ function App() {
   };
 
   return (
-    <div>
-      <Nav
+    <div className="App">
+      <Cart
         over={over}
         timeLeft={timeLeft}
         purchase={purchase}

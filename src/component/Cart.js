@@ -1,14 +1,7 @@
 import React, { useEffect } from "react";
-import {
-  Navbar,
-  Badge,
-  Button,
-  Modal,
-  ListGroup,
-  Image,
-} from "react-bootstrap";
+import { Badge, Button, Modal, ListGroup, Image } from "react-bootstrap";
 
-const Nav = (props) => {
+const Cart = (props) => {
   const sales = (price) => {
     let salesPrice = 0;
     if (props.basket.length > 5) {
@@ -38,12 +31,7 @@ const Nav = (props) => {
   };
 
   return (
-    <Navbar>
-      <Navbar.Brand>Welcome</Navbar.Brand>
-      {/* <Button variant="primary" onClick={props.handleShow}>
-        Cart <Badge variant="light">{props.basket.length}</Badge>
-      </Button> */}
-
+    <div>
       <Modal
         show={props.show}
         onHide={props.handleClose}
@@ -108,8 +96,13 @@ const Nav = (props) => {
         </Modal.Body>
         <Modal.Footer>
           <div className="numberPrice">
-            <p>Number of Movie: {props.basket.length}</p>
-            <p>Total Price: {sales(props.price)}</p>
+            <h3>
+              Number of Movie:{" "}
+              <Badge variant="info">{props.basket.length}</Badge>
+            </h3>
+            <h3>
+              Total Price: <Badge variant="info">{sales(props.price)}</Badge>
+            </h3>
           </div>
           <div className="btns">
             <Button variant="secondary" onClick={props.handleClose}>
@@ -121,8 +114,8 @@ const Nav = (props) => {
           </div>
         </Modal.Footer>
       </Modal>
-    </Navbar>
+    </div>
   );
 };
 
-export default Nav;
+export default Cart;

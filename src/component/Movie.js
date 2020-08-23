@@ -52,27 +52,31 @@ const Movie = (props) => {
                   id="cardImg"
                   height="379.5"
                   width="253"
-                  src={"https://image.tmdb.org/t/p/w500/" + m.poster_path}
+                  src={"https://image.tmdb.org/t/p/w500" + m.poster_path}
                   variant="top"
                 />
                 <Card.Body>
                   <Card.Title>{m.title}</Card.Title>
                   <Card.Text>{Math.ceil(m.popularity) * 10} ฿</Card.Text>
+                </Card.Body>
+                <Card.Footer>
                   <Button
                     variant="primary"
                     onClick={() =>
                       props.pushToBasket(m.popularity, m.title, m.id)
                     }
+                    className="material-icons"
+                    style={{ float: "right" }}
                   >
-                    Put to Cart
+                    add_shopping_cart
                   </Button>
-                </Card.Body>
+                </Card.Footer>
               </Card>
             </Col>
           ))
         ) : (
-          <div id="notfound">Not Found</div>
-        )}
+          <h1 id="notfound">Not Found</h1>
+        )}{" "}
       </Row>
     </Container>
   );
