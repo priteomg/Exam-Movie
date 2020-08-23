@@ -1,23 +1,18 @@
 .App {
-  background: rgb(250, 220, 172);
+  background: #fabea7;
   background: -moz-linear-gradient(
-    top,
-    rgb(250, 220, 172) 0%,
-    rgb(21, 132, 103) 100%,
-    rgb(6, 84, 70) 100%
+    45deg,
+    #fabea7 0%,
+    #fbe2e5 100%,
+    #9cada4 100%
   );
   background: -webkit-linear-gradient(
-    top,
-    rgb(250, 220, 172) 0%,
-    rgb(21, 132, 103) 100%,
-    rgb(6, 84, 70) 100%
+    45deg,
+    #fabea7 0%,
+    #fbe2e5 100%,
+    #9cada4 100%
   );
-  background: linear-gradient(
-    to bottom,
-    rgb(250, 220, 172) 0%,
-    rgb(21, 132, 103) 100%,
-    rgb(6, 84, 70) 100%
-  );
+  background: linear-gradient(45deg, #fabea7 0%, #fbe2e5 100%, #9cada4 100%);
   min-height: 100vh;
 }
 
@@ -124,6 +119,22 @@ form {
   border: none;
 }
 
+.formSeacrh {
+  border: none;
+  outline: none;
+  background-image: url("https://image.tmdb.org/t/p/original/xJWPZIYOEFIjZpBL7SVBGnzRYXp.jpg");
+  background-color: #cccccc;
+  height: 350px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* position: relative; */
+
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
 /* #cardImg {
   max-width: 100%;
   height: auto;

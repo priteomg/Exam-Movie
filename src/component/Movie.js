@@ -34,15 +34,22 @@ const Movie = (props) => {
     <Container>
       <Row className="row">
         <Col xl={12}>
-          <Form inline>
-            <FormControl
-              id="search"
-              className="mr-sm-2"
-              type="text"
-              placeholder="Search Movie"
-              onChange={handleChange}
-            />
-          </Form>
+          <div className="formSeacrh">
+            <h2>Welcome.</h2>
+            <h3>
+              Millions of movies, TV shows and people to discover. Explore now.
+            </h3>
+
+            <Form inline>
+              <FormControl
+                id="search"
+                className="mr-sm-2"
+                type="text"
+                placeholder="Search Movie"
+                onChange={handleChange}
+              />
+            </Form>
+          </div>
         </Col>
         {filteredMovies.length > 0 ? (
           filteredMovies.map((m) => (
