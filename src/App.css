@@ -142,6 +142,7 @@ form {
 
 .timer {
   text-align: center;
+  grid-column: 1/4;
 }
 
 #notfound {
@@ -150,7 +151,8 @@ form {
 }
 
 .payment {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
 }
 
 #scbImg,
@@ -162,7 +164,12 @@ form {
   margin-top: -20px;
 }
 
+.scb {
+  grid-column: 1/2;
+}
+
 .kbank {
+  grid-column: 2/4;
   margin-left: auto;
   margin-top: -6px;
 }

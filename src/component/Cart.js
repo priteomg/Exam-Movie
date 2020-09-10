@@ -75,6 +75,7 @@ const Cart = (props) => {
                     .padStart(2, "0")}`}</p>
                 )}
               </div>
+
               <div className="scb">
                 <Image
                   id="scbImg"

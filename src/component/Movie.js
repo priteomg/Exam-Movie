@@ -54,7 +54,7 @@ const Movie = (props) => {
         {filteredMovies.length > 0 ? (
           filteredMovies.map((m) => (
             <Col xl={3} xs={12} sm={6} lg={4} key={m.id}>
-              <Card>
+              <Card class="grid">
                 <Card.Img
                   id="cardImg"
                   height="379.5"
