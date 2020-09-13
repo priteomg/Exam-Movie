@@ -119,6 +119,11 @@ form {
   border: none;
 }
 
+.movie-card {
+  overflow: hidden;
+  position: relative;
+}
+
 .formSeacrh {
   border: none;
   outline: none;
@@ -135,10 +140,16 @@ form {
   padding-bottom: 50px;
   padding-left: 80px;
 }
-/* #cardImg {
-  max-width: 100%;
+
+#cardImg {
+  object-fit: cover;
+  width: 100%;
   height: auto;
-} */
+}
+
+.movie-title {
+  font-size: 17px;
+}
 
 .timer {
   text-align: center;

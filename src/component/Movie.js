@@ -54,7 +54,7 @@ const Movie = (props) => {
         {filteredMovies.length > 0 ? (
           filteredMovies.map((m) => (
             <Col xl={3} xs={12} sm={6} lg={4} key={m.id}>
-              <Card class="grid">
+              <Card className="movie-card">
                 <Card.Img
                   id="cardImg"
                   height="379.5"
@@ -62,11 +62,11 @@ const Movie = (props) => {
                   src={"https://image.tmdb.org/t/p/w500" + m.poster_path}
                   variant="top"
                 />
-                <Card.Body>
-                  <Card.Title>{m.title}</Card.Title>
+                <Card.Body className="card-body">
+                  <Card.Title className="movie-title">{m.title}</Card.Title>
                   <Card.Text>Rating: {m.vote_average}</Card.Text>
                 </Card.Body>
-                <Card.Footer>
+                <Card.Footer className="card-footer">
                   <Card.Text>{Math.ceil(m.popularity) * 10} ฿</Card.Text>
                   <Button
                     variant="primary"

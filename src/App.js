@@ -36,7 +36,7 @@ function App() {
   async function fetchMovie() {
     try {
       const res = await axios.get(
-        "https://api.themoviedb.org/3/search/movie?api_key=17afcd74e67796016577244fdca52898&query=a"
+        "https://api.themoviedb.org/3/discover/movie?api_key=17afcd74e67796016577244fdca52898&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1"
       );
       const { results } = res.data;
       console.log(results);
