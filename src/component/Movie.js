@@ -1,3 +1,4 @@
+import Axios from "axios";
 import React, { useState, useEffect } from "react";
 import {
   Container,
@@ -24,10 +25,17 @@ const Movie = (props) => {
   }, [props.movie]);
 
   useEffect(() => {
-    const results = props.movie.filter((m) =>
-      m.title.toLowerCase().includes(search.toLowerCase())
-    );
-    setFilteredMovies(results);
+    // const results = props.movie.filter((m) =>
+    //   m.title.toLowerCase().includes(search.toLowerCase())
+    // );
+    async function searchMovie() {
+      const res = await Axios.get(
+        `https://api.themoviedb.org/3/search/movie?api_key=17afcd74e67796016577244fdca52898&query=${search}`
+      );
+      const { results } = res.data;
+      setFilteredMovies(results);
+    }
+    searchMovie();
   }, [search]);
 
   return (
@@ -57,8 +65,6 @@ const Movie = (props) => {
               <Card className="movie-card">
                 <Card.Img
                   id="cardImg"
-                  height="379.5"
-                  width="253"
                   src={"https://image.tmdb.org/t/p/w500" + m.poster_path}
                   variant="top"
                 />
